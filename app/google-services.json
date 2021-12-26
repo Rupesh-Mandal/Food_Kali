@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "539637856263",
+    "project_id": "food-kali",
+    "storage_bucket": "food-kali.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:539637856263:android:5b404d1d468718031dd2a2",
+        "android_client_info": {
+          "package_name": "com.kali_corporations.foodkali"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "539637856263-4vru8t5sra4r5d0vkei5nds4ub5uktaj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kali_corporations.foodkali",
+            "certificate_hash": "4924ce79571696ed5d7b33c2b4053718111a1472"
+          }
+        },
+        {
+          "client_id": "539637856263-le8973j63isf74nprg6vkbn3gdqqkno9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANeY6ELkvuucVJIhqfPzhWTwoztA--c5c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "539637856263-le8973j63isf74nprg6vkbn3gdqqkno9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
