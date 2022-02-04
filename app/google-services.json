@@ -1,41 +1,62 @@
 {
   "project_info": {
-    "project_number": "539637856263",
-    "project_id": "food-kali",
-    "storage_bucket": "food-kali.appspot.com"
+    "project_number": "219005285748",
+    "project_id": "food-kali-d0816",
+    "storage_bucket": "food-kali-d0816.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:539637856263:android:5b404d1d468718031dd2a2",
+        "mobilesdk_app_id": "1:219005285748:android:c6b126900a42f1c7376821",
         "android_client_info": {
-          "package_name": "com.kali_corporations.foodkali"
+          "package_name": "com.softkali.foodkali"
         }
       },
       "oauth_client": [
         {
-          "client_id": "539637856263-4vru8t5sra4r5d0vkei5nds4ub5uktaj.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.kali_corporations.foodkali",
-            "certificate_hash": "4924ce79571696ed5d7b33c2b4053718111a1472"
-          }
-        },
-        {
-          "client_id": "539637856263-le8973j63isf74nprg6vkbn3gdqqkno9.apps.googleusercontent.com",
+          "client_id": "219005285748-ibnpkcg03ktf5mp0g378g9oah9649tf4.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyANeY6ELkvuucVJIhqfPzhWTwoztA--c5c"
+          "current_key": "AIzaSyD_rWWGufn8LFWoxFaQpfEA-RCLARVEQZY"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "539637856263-le8973j63isf74nprg6vkbn3gdqqkno9.apps.googleusercontent.com",
+              "client_id": "219005285748-ibnpkcg03ktf5mp0g378g9oah9649tf4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:219005285748:android:50755783876dabee376821",
+        "android_client_info": {
+          "package_name": "com.softkali.sellerkf"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "219005285748-ibnpkcg03ktf5mp0g378g9oah9649tf4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_rWWGufn8LFWoxFaQpfEA-RCLARVEQZY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "219005285748-ibnpkcg03ktf5mp0g378g9oah9649tf4.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
