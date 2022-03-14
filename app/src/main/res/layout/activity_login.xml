@@ -85,15 +85,6 @@
             android:text="Sign In"
             android:textColor="@color/white" />
 
-        <TextView
-            android:id="@+id/login_btn_forgot_password"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Forgot Password"
-            android:textSize="10dp"
-            android:fontFamily="@font/krona_one_regular"
-            android:textColor="@color/black" />
 
         <TextView
             android:layout_width="wrap_content"

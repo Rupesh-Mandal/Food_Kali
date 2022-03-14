@@ -1,6 +1,7 @@
 package com.softkali.foodkali.auth;
 
 import static com.softkali.foodkali.utils.Constant.UserSignUp;
+import static com.softkali.foodkali.utils.Constant.getAllLocation;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -25,14 +26,17 @@ import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.softkali.foodkali.R;
 import com.softkali.foodkali.dashboard.DashboardActivity;
-import com.softkali.foodkali.utils.Location;
 
+
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -68,7 +72,7 @@ public class SignUpActivity extends AppCompatActivity {
         btn_signup = findViewById(R.id.btn_signup);
         login_btn = findViewById(R.id.login_btn);
 
-        user_location.setAdapter(new ArrayAdapter<Location>(this, android.R.layout.simple_spinner_item, Location.values()));
+        loadLocation();
 
         login_btn.setOnClickListener(view -> {
             startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
@@ -82,6 +86,45 @@ public class SignUpActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    private void loadLocation() {
+        progressDialog.show();
+        String URL = getAllLocation;
+
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                progressDialog.dismiss();
+                Log.e("abcd",response);
+
+                try {
+                    JSONArray jsonArray=new JSONArray(response);
+                    ArrayList<String> locationArrayList=new ArrayList<>();
+
+                    for (int i=0;i<jsonArray.length();i++){
+                        JSONObject locationObject=jsonArray.getJSONObject(i);
+                        locationArrayList.add(locationObject.getString("name"));
+                    }
+                    user_location.setAdapter(new ArrayAdapter<String>(SignUpActivity.this, android.R.layout.simple_spinner_item, locationArrayList));
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(SignUpActivity.this,"someting went wrong ", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                progressDialog.dismiss();
+                Log.e("abcd", error.toString());
+                Toast.makeText(SignUpActivity.this,"someting went wrong "+ error.toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        requestQueue.add(stringRequest);
     }
 
     private void signUp() {
@@ -109,6 +152,7 @@ public class SignUpActivity extends AppCompatActivity {
                             JSONObject userObject=jsonObject.getJSONObject("data");
                             editor.putString("user",userObject.toString());
                             editor.commit();
+                            FirebaseMessaging.getInstance().subscribeToTopic(userObject.getString("userId"));
                             startActivity(new Intent(SignUpActivity.this, DashboardActivity.class));
                             finish();
                         }else {

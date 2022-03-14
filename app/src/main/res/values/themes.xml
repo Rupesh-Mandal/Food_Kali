@@ -14,4 +14,12 @@
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
         <!-- Customize your theme here. -->
     </style>
+
+
+    <style name="bottom_shee_dailog_theam" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/model</item>
+    </style>
+    <style name="model" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bottom_sheet_shap</item>
+    </style>
 </resources>

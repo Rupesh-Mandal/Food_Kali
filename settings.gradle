@@ -8,4 +8,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Food Kali"
 include ':app'
-include ':sellerkf'
+include ':sellerfk'

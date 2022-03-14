@@ -11,6 +11,7 @@ import android.view.WindowManager;
 import android.widget.TextView;
 
 
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.softkali.foodkali.BuildConfig;
 import com.softkali.foodkali.R;
 import com.softkali.foodkali.auth.LoginActivity;
@@ -31,6 +32,7 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_splash);
+        FirebaseMessaging.getInstance().subscribeToTopic("123");
 
         v = findViewById(R.id.textView2);
         v.setText("V "+ BuildConfig.VERSION_NAME);;

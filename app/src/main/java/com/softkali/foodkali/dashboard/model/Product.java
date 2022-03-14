@@ -1,14 +1,13 @@
 package com.softkali.foodkali.dashboard.model;
 
 
-import com.softkali.foodkali.utils.Location;
 import com.softkali.foodkali.utils.ProductType;
 
 public class Product {
 
     private Long id;
     private String productId;
-    private Long sellerId;
+    private String sellerId;
 
     private String productName;
     private String productDescription;
@@ -20,12 +19,12 @@ public class Product {
     private String productPhoneNumber;
     private String createdTime;
     private ProductType productType;
-    private Location location;
+    private String location;
 
     public Product() {
     }
 
-    public Product(Long id, String productId, Long sellerId, String productName, String productDescription, String productRate, String productDeliverCharge, String productImageLink, String productHotelname, String productEmail, String productPhoneNumber, String createdTime, ProductType productType, Location location) {
+    public Product(Long id, String productId, String sellerId, String productName, String productDescription, String productRate, String productDeliverCharge, String productImageLink, String productHotelname, String productEmail, String productPhoneNumber, String createdTime, ProductType productType, String location) {
         this.id = id;
         this.productId = productId;
         this.sellerId = sellerId;
@@ -42,11 +41,11 @@ public class Product {
         this.location = location;
     }
 
-    public Long getSellerId() {
+    public String getSellerId() {
         return sellerId;
     }
 
-    public void setSellerId(Long sellerId) {
+    public void setSellerId(String sellerId) {
         this.sellerId = sellerId;
     }
 
@@ -146,11 +145,11 @@ public class Product {
         this.productType = productType;
     }
 
-    public Location getLocation() {
+    public String getLocation() {
         return location;
     }
 
-    public void setLocation(Location location) {
+    public void setLocation(String location) {
         this.location = location;
     }
 }

@@ -23,6 +23,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.softkali.foodkali.R;
 import com.softkali.foodkali.dashboard.DashboardActivity;
 
@@ -113,6 +114,7 @@ public class LoginActivity extends AppCompatActivity {
                             JSONObject userObject=jsonObject.getJSONObject("data");
                             editor.putString("user",userObject.toString());
                             editor.commit();
+                            FirebaseMessaging.getInstance().subscribeToTopic(userObject.getString("userId"));
                             startActivity(new Intent(LoginActivity.this, DashboardActivity.class));
                             finish();
                         }else {
